@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-fluid">
+        
+            {% for b in bc.chain %}
+            <h6 class="mb-12">
+            block id: {{b.id}}<br>
+            block timestamp: {{b.timestamp}}<br>
+            block proof: {{b.proof}}<br>
+            block previous hash: {{b.prev_hash}}<br>
+            txns:{<br>{% for t in b.transactions %}
+                sender: {{t.sender}}<br>
+                receiver: {{t.receiver}}<br>
+                amount: {{t.amount}},<br>
+            {% endfor %}
+            }
+        </h6>
+            {% endfor %}
+        
+    </div>
+{% endblock %}

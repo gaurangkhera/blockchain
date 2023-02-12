@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+    Select a user to pay to
+{% endblock %}
+{% block content %}
+<center>
+    <h1>Select a user to pay XC to</h1>
+    {% for user in users %}
+        <h3><a href="/pay/{{user.username}}">{{user.username}}</a></h3>
+    {% endfor %}
+</center>
+{% endblock %}

@@ -26,9 +26,21 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/mine">Mine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/pay">Pay</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/validate">Check validity</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/chain">See blockchain</a>
+          </li>
         </ul>
           {% if current_user.is_authenticated %}
-          <text class="me-4">Current plan: {{current_user.membership}}</a>
+          <text class="me-4">Balance: {{current_user.money}} XC</a>
           <a class="btn btn-outline-danger" href="/logout">Logout</a>
           {% else %}
           <a class="btn btn-outline-success me-2" href="/login">Login</a>

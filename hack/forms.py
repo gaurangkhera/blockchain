@@ -12,3 +12,7 @@ class RegForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=3, max=32)])
     password = PasswordField('Password',validators=[DataRequired(), Length(min=8, max=128)])
     submit = SubmitField("Register")
+    
+class PayForm(FlaskForm):
+    amount = IntegerField('amnt', validators=[DataRequired()])
+    submit = SubmitField('Send money')

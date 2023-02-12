@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <center>
+        <h1>
+            Sending money to {{user.username}}
+        </h1>
+        <form action="/pay/{{user.username}}" method="post">
+            {{form.hidden_tag()}}
+            {{form.csrf_token}}
+            {{form.amount(class='form-control mb-2')}}
+            {{form.submit(class='btn-primary btn')}}
+        </form>
+    </center>
+{% endblock %}
