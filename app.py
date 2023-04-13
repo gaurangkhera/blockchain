@@ -10,10 +10,6 @@ from uuid import uuid1
 
 node_addr = str(uuid1()).replace('-', '')
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 # blockchain = XCBlockChain()
 
 @app.route('/')
@@ -140,4 +136,4 @@ def logout():
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
